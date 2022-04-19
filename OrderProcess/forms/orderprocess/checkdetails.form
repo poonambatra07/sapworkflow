@@ -1,0 +1,88 @@
+{
+    "id": "checkdetails",
+    "schemaVersion": "1.1.0",
+    "name": "checkdetails",
+    "revision": "1",
+    "type": "task",
+    "readOnly": false,
+    "content": [
+        {
+            "id": "basic",
+            "type": "section",
+            "title": "Basic",
+            "content": [
+                {
+                    "id": "name",
+                    "type": "string",
+                    "label": "First Name",
+                    "readOnly": false,
+                    "value": "${context.empData.firstName}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "last_name",
+                    "type": "string",
+                    "label": "Last Name",
+                    "readOnly": false,
+                    "value": "${context.empData.lastName}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "country",
+                    "type": "string",
+                    "label": "Country",
+                    "readOnly": false,
+                    "value": "${context.empData.country}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "gender",
+                    "type": "string",
+                    "label": "gender",
+                    "readOnly": false,
+                    "value": "${context.empData.gender}",
+                    "control": {
+                        "type": "RadioButtons",
+                        "properties": {
+                            "items": [
+                                {
+                                    "value": "M",
+                                    "displayValue": "Male"
+                                },
+                                {
+                                    "value": "F",
+                                    "displayValue": "Female"
+                                }
+                            ]
+                        }
+                    },
+                    "constraints": {
+                        "required": true,
+                        "enum": [
+                            "M",
+                            "F"
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "decisions": [
+        {
+            "id": "approve",
+            "text": "approve",
+            "decisionType": "positive"
+        },
+        {
+            "id": "reject",
+            "text": "reject",
+            "decisionType": "negative"
+        }
+    ]
+}

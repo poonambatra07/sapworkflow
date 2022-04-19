@@ -1,0 +1,21 @@
+{
+    "id": "name",
+    "schemaVersion": "1.1.0",
+    "name": "Name",
+    "revision": "1.0",
+    "type": "task",
+    "readOnly": false,
+    "content": [
+        {
+            "id": "enter_name",
+            "type": "string",
+            "label": "Enter Name",
+            "readOnly": false,
+            "value": "${context.empData.firstName}",
+            "constraints": {
+                "required": false
+            }
+        }
+    ],
+    "decisions": []
+}

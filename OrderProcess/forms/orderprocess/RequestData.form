@@ -1,0 +1,42 @@
+{
+    "id": "requestdata",
+    "schemaVersion": "1.1.0",
+    "name": "RequestData",
+    "revision": "1",
+    "type": "task",
+    "readOnly": false,
+    "content": [
+        {
+            "id": "name",
+            "type": "string",
+            "label": "Name",
+            "readOnly": false,
+            "value": "${context.empData.firstName}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "last_name",
+            "type": "string",
+            "label": "Last Name",
+            "readOnly": false,
+            "value": "${context.empData.lastName}",
+            "constraints": {
+                "required": true
+            }
+        }
+    ],
+    "decisions": [
+        {
+            "id": "approve",
+            "text": "Approve",
+            "decisionType": "positive"
+        },
+        {
+            "id": "reject",
+            "text": "Reject",
+            "decisionType": "negative"
+        }
+    ]
+}
